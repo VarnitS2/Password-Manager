@@ -62,7 +62,7 @@ def deletePass(platform):
     if flag == True:
         print('Password deleted successfully.')
     else:
-        print('No such password found.')
+        print('Password not found.')
 
     return
 
@@ -108,3 +108,5 @@ if __name__ == "__main__":
             help()
         elif (command == 'quit'):
             break
+        else:
+            print('Unknown command')
