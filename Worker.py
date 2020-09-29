@@ -66,6 +66,15 @@ def deletePass(platform):
 
     return
 
+def help():
+    print('---------------- Help ----------------')
+    print('Commands:')
+    print('cn [args]  -- Create a new password with label [args]')
+    print('cp [args]  -- Copy an existing password with label [args]')
+    print('del [args] -- Delete an existing password with label [args] (WARNING: irreversible)')
+    print('help       -- Display this help page.')
+    print('quit       -- Exit program.\n')
+
 if __name__ == "__main__":
     while True:
         inp = input(': ')
@@ -77,5 +86,7 @@ if __name__ == "__main__":
             copyPass(inp.split(' ')[1], 1)
         elif (command == 'del'):
             deletePass(inp.split(' ')[1])
+        elif (command == 'help'):
+            help()
         elif (command == 'quit'):
             break
