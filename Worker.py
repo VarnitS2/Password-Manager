@@ -87,6 +87,7 @@ def help():
     print('cn [args]  -- Create a new password with label [args]')
     print('cp [args]  -- Copy an existing password with label [args]')
     print('del [args] -- Delete an existing password with label [args] (WARNING: irreversible)')
+    print('list       -- List all existing password labels.')
     print('help       -- Display this help page.')
     print('quit       -- Exit program.\n')
 
