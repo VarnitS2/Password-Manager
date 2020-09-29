@@ -66,6 +66,21 @@ def deletePass(platform):
 
     return
 
+def listPass():
+    flag = False
+
+    with open(FILE_NAME, 'r') as file:
+        lines = file.readlines()
+
+    for line in lines:
+        flag = True
+        print(line.split(':')[0])
+
+    if not flag:
+        print('There are no existing passwords.')
+
+    return
+
 def help():
     print('---------------- Help ----------------')
     print('Commands:')
@@ -86,6 +101,8 @@ if __name__ == "__main__":
             copyPass(inp.split(' ')[1], 1)
         elif (command == 'del'):
             deletePass(inp.split(' ')[1])
+        elif (command == 'list'):
+            listPass()
         elif (command == 'help'):
             help()
         elif (command == 'quit'):
