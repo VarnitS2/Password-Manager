@@ -46,6 +46,26 @@ def copyPass(platform, mainFlag=0):
 
     return
 
+def deletePass(platform):
+    flag = False
+
+    with open(FILE_NAME, 'r') as file:
+        lines = file.readlines()
+
+    with open(FILE_NAME, 'w') as file:
+        for line in lines:
+            if (line.split(':')[0] != platform):
+                file.write(line)
+            else:
+                flag = True
+
+    if flag == True:
+        print('Password deleted successfully.')
+    else:
+        print('No such password found.')
+
+    return
+
 if __name__ == "__main__":
     while True:
         inp = input(': ')
@@ -55,5 +75,7 @@ if __name__ == "__main__":
             createNewPass(inp.split(' ')[1])
         elif (command == 'cp'):
             copyPass(inp.split(' ')[1], 1)
+        elif (command == 'del'):
+            deletePass(inp.split(' ')[1])
         elif (command == 'quit'):
             break
